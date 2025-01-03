@@ -91,6 +91,19 @@ public class SetMealController {
     }
 
 
+    /**
+     * 停售、起售套餐
+     * @param status
+     * @param id
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    @ApiOperation("停售、起售套餐")
+    public Result startOrStop(@PathVariable Integer status, Long id) {
+        setMealService.startOrStop(status, id);
+        return Result.success();
+    }
+
 
 
 }
